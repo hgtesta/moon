@@ -1,0 +1,25 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: moon_development
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: moon_test
+  pool: 5
+  username: root
+  password:
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: moon_production
+  pool: 5
+  username: root
+  password:
+
+
