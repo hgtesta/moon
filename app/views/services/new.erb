@@ -1,0 +1,15 @@
+<h2>Add Service</h2>
+
+<%= form_for @service do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br />
+  <%= f.label :command %>
+  <%= f.text_field :command %>
+  <br />
+  <%= f.label :expected_result %>
+  <%= f.text_field :expected_result %>
+  <br />
+  <%= f.submit "Add service" %>
+<% end %>
+

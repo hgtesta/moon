@@ -1,0 +1,17 @@
+<h2>Services</h2>
+<table>
+  <% for service in @services %>
+    <tr data-id="<%= service.id %>">
+      <td><%= service.description %></td>
+      <td><%= service.command %></td>
+      <td><%= service.expected_result %></td>
+      <td><%= service.periodicity %></td>
+      <td><input type="button" value="Execute"/></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Adicionar serviço", new_service_path %>
+
+:javascript
+
+  $()
