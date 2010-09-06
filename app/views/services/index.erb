@@ -1,4 +1,5 @@
 <h2>Services</h2>
+
 <table>
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
@@ -12,10 +13,13 @@
 </table>
 <%= link_to "Adicionar serviço", new_service_path %>
 
-<script type="javascript">
+<script language="javascript">
 
   $(".execute-button").click(function(){
-    alert("go!");
+    var id = $(this).closest("tr").attr("data-id");
+    $.post("/services/" + id + "/executions", function(data){
+      alert(data);
+    })
   });
 
 </script>

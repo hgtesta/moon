@@ -2,7 +2,10 @@ Moon::Application.routes.draw do
 
   root :to => "services#index"
 
-  resources :services
+  resources :services do
+    resources :executions
+  end
+  resources :executions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
