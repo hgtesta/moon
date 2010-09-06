@@ -13,10 +13,28 @@
 ActiveRecord::Schema.define(:version => 0) do
 
   create_table "services" do |t|
-    t.string :description
-    t.string :command
-    t.string :expected_result
-    t.string :periodicity
+    t.string   :description
+    t.string   :command
+    t.string   :expected_result
+    t.string   :periodicity
+    t.datetime :created_at
+    t.datetime :updated_at
+  end
+
+  create_table "executions" do |t|
+    t.string   :command
+    t.integer  :return_code
+    t.string   :output
+    t.integer  :duration
+    t.integer  :service_id
+    t.datetime :created_at
+  end
+
+  create_table "panels" do |t|
+    t.string   :name
+    t.string   :style
+    t.datetime :created_at
+    t.datetime :updated_at
   end
 
 end
