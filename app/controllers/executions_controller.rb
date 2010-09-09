@@ -1,3 +1,5 @@
+require "benchmark"
+
 class ExecutionsController < ApplicationController
    
   def create
@@ -5,11 +7,14 @@ class ExecutionsController < ApplicationController
     #Thread.new {
     begin
       Timeout::timeout(@service.timeout) do
-        execution = Execution.new(:command => @service.command)
-        execution.output = `#{@service.command}`
-        execution.return_code = $?                                  
-        @service.executions << execution
-        @result = execution.return_code
+        benchmark = Benchmark.measure do
+          @execution = Execution.new(:command => @service.command)
+          @execution.output = `#{@service.command}`
+          @execution.return_code = $?                                  
+       end
+       @execution.duration = benchmark.real
+       @service.executions << @execution
+       @result = @execution.return_code
       end
     rescue Timeout::Error
       @result = "timeout"
