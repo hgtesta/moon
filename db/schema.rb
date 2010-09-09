@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   :command
     t.integer  :return_code
     t.string   :output
-    t.integer  :duration
+    t.float    :duration
+    t.boolean  :timeout
     t.integer  :service_id
     t.datetime :created_at
   end
