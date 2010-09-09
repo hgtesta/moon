@@ -3,10 +3,10 @@
 <table>
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
-      <td><%= link_to service.description, edit_service_path(service) %></td>
+      <td><%= link_to service.name, edit_service_path(service) %></td>
       <td><%= service.command %></td>
       <td><%= service.expected_result %></td>
-      <td><%= service.periodicity %></td>
+      <td><%= service.when %></td>
       <td><input type="button" class="execute-button" value="Execute"/></td>
     </tr>
   <% end %>

@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(:version => 0) do
 
   create_table "services" do |t|
-    t.string   :description
+    t.string   :name
     t.string   :command
     t.string   :expected_result
-    t.string   :periodicity
+    t.string   :when
+    t.integer  :timeout
     t.datetime :created_at
     t.datetime :updated_at
   end

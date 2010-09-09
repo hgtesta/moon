@@ -4,7 +4,7 @@ class ExecutionsController < ApplicationController
     @service = Service.find(params[:service_id])
     #Thread.new {
     begin
-      Timeout::timeout(5) do
+      Timeout::timeout(@service.timeout) do
         execution = Execution.new(:command => @service.command)
         execution.output = `#{@service.command}`
         execution.return_code = $?                                  
