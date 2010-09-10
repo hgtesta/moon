@@ -27,6 +27,7 @@ class ServicesController < ApplicationController
  end
 
   def update
+    @panel = Panel.find params[:panel_id]
     @service = Service.find(params[:id])
     if @service.update_attributes(params[:service])
       redirect_to panel_services_path(@panel), :notice => "Service successfully updated"
