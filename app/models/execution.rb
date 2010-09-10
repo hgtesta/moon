@@ -3,8 +3,6 @@ require "benchmark"
 class Execution < ActiveRecord::Base
   belongs_to :service
 
-  validates :timeout, :presence => true
-
   def execute!
     begin
       Timeout::timeout(service.timeout) do

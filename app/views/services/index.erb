@@ -1,5 +1,7 @@
 <h2>Services</h2>
 
+<p><%= link_to "Add service", new_panel_service_path(@panel) %></p>
+
 <table>
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
@@ -7,11 +9,9 @@
       <td><%= service.command %></td>
       <td><%= service.expected_result %></td>
       <td><%= service.when %></td>
-      <td><input type="button" class="execute-button" value="Execute"/></td>
     </tr>
   <% end %>
 </table>
-<%= link_to "Adicionar serviço", new_service_path %>
 
 <script language="javascript">
 
