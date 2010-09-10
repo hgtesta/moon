@@ -8,7 +8,7 @@ class ExecutionsController < ApplicationController
       @execution.execute!
    #}
     @service.save!
-    render :text => @result
+    render :text => @execution.return_code
   end
 
   def show

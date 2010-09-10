@@ -1,0 +1,22 @@
+<h2><%= @panel.name %></h2>
+
+<table>
+  <% for service in @services %>
+    <tr data-id="<%= service.id %>">
+      <td><%= service.name %></td>
+      <td><input type="button" class="execute-button" value="Execute"/></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Adicionar serviço", new_panel_service_path(@panel) %>
+
+<script language="javascript">
+
+  $(".execute-button").click(function(){
+    var id = $(this).closest("tr").attr("data-id");
+    $.post("/services/" + id + "/executions", function(data){
+      alert(data);
+    })
+  });
+
+</script>

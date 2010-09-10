@@ -1,0 +1,7 @@
+<h2>Panels</h2>
+
+<%= link_to "Add panel", new_panel_path %>
+
+<% for panel in @panels %>
+  <p><%= link_to panel.name, panel_path(panel) %></p>
+<% end %>

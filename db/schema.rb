@@ -39,4 +39,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime :updated_at
   end
 
+  create_table "panels_services", :id => false do |t|
+    t.integer  :service_id
+    t.integer  :panel_id
+  end
+
 end
