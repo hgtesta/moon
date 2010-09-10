@@ -3,19 +3,22 @@ require "benchmark"
 class Execution < ActiveRecord::Base
   belongs_to :service
 
+  validates :timeout, :presence => true
+
   def execute!
     begin
       Timeout::timeout(service.timeout) do
         benchmark = Benchmark.measure do
-          command = service.command
-          output = `#{command}`
-          return_code = $?
+          self.command = service.command
+          self.output = `#{command}`
+          self.return_code = $?
         end
-        duration = benchmark.real
+        self.duration = benchmark.real
       end
     rescue Timeout::Error
       @result = "timeout"
     end
+    @result || return_code
   end
 
 end

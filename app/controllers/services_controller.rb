@@ -8,6 +8,7 @@ class ServicesController < ApplicationController
   def new
     @panel = Panel.find(params[:panel_id])
     @service = @panel.services.build
+    @service.timeout = 10
   end
 
   def create

@@ -7,6 +7,7 @@ class ExecutionsController < ApplicationController
     #Thread.new {
       @execution.execute!
    #}
+#    @execution.save!
     @service.save!
     render :text => @execution.return_code
   end

@@ -4,6 +4,11 @@
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
       <td><%= service.name %></td>
+      <td>
+        <% for execution in service.executions%>
+          <%= execution.return_code %>
+        <% end %>
+      </td>
       <td><input type="button" class="execute-button" value="Execute"/></td>
     </tr>
   <% end %>
