@@ -14,7 +14,8 @@ class ServicesController < ApplicationController
   def create
     @panel = Panel.find params[:panel_id]
     @service = Service.new params[:service]
-    if @panel.services << @service
+    if @service.valid?
+      @panel.services << @service
       redirect_to panel_services_path(@panel), :notice => "Service successfully created"
     else
       render :new
