@@ -1,0 +1,32 @@
+/* blue link: #4183C4 */
+/* highlight: #fff5e7 */
+/* table stripes: #edf3fe */
+
+/* Global */
+a { color:#3a63C0; text-decoration:none }
+h2 { font-size:18px; color:#555555; }
+a:hover { color:#102390 }
+body { color:#333333; font-family: Helvetica, arial, sans-serif; font-size:12px }
+
+/* Buttons */
+.small-button, .big-button { background-color:#777777; color:#ffffff; padding:4px 8px; cursor:pointer;
+   -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
+.small-button:hover, .big-button:hover { background-color:#555555; color:#ffffff }
+.big-button { font-size:14px; padding:4px 12px }
+
+/* Utility classes */
+.delete-link { color:#ff3333 }
+a.delete-link:hover { color:#ff3333; text-decoration:underline }
+.delimiter { background-color:#eeeeee; padding:4px 4px;
+      -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
+      
+/* Generic data table */
+.data-table { }
+  .data-table tr { height:23px; }
+  .data-table tr th { font-size:11px; font-weight:bold; text-transform:uppercase; color:#999999; border-bottom:3px solid #e5e5e5; background-color:#ffffff }
+  .data-table tr td { padding:4px 8px 4px 8px; border-bottom:solid 1px #eeeef5; }
+  .data-table tr:last-child td { border-bottom:none }
+  .data-table tr:hover { background-color:#fff5e7 !important }
+  .data-table tr:not([style~="display:none"]):nth-child(2n+1) { background-color:#edf3fe }
+
+
