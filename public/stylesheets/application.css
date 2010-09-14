@@ -30,4 +30,7 @@ a.delete-link:hover { color:#ff3333; text-decoration:underline }
   .data-table tr:hover { background-color:#fff5e7 !important }
   .data-table tr:not([style~="display:none"]):nth-child(2n+1) { background-color:#edf3fe }
 
-
+.big-form { }
+  .big-form input[type=text] { font-size:20px; width:600px }
+  .big-form .console { color:#ffffff; background-color:#000000;  }
+  .big-form input[type=submit] { font-size:18px }

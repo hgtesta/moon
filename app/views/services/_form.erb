@@ -1,17 +1,31 @@
 <%= f.error_messages :message => nil, :header_message => nil %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br />
-<%= f.label :command %>
-<%= f.text_field :command %>
-<br />
-<%= f.label :expected_result %>
-<%= f.text_field :expected_result %>
-<br />
-<%= f.label :timeout %>
-<%= f.text_field :timeout %>
-<br />
-<%= f.label :when %>
-<%= f.text_field :when %>
-<br />
+<div class="big-form">
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :command %><br/>
+    <%= f.text_field :command %>
+  </p>
+
+  <p>
+    <%= f.label :expected_result %><br/>
+    <%= f.text_field :expected_result %>
+  </p>
+
+  <table>
+    <tr>
+      <td>
+        <%= f.label :when %><br/>
+        <%= f.text_field :when, :style => "width:515px" %>
+      </td>
+      <td>
+        <%= f.label :timeout %><br/>
+        <%= f.text_field :timeout, :style => "width:70px" %>
+      </td>
+    </tr>
+  </table>
+</div>
