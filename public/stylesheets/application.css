@@ -15,6 +15,9 @@ body { color:#333333; font-family: Helvetica, arial, sans-serif; font-size:12px 
 .small-button:hover, .big-button:hover { background-color:#555555; color:#ffffff }
 .big-button { font-size:14px; padding:4px 12px }
 
+.rounded_2 { -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
+.rounded_4 { -webkit-border-radius:4px; -moz-border-radius:4px; -o-border-radius:4px; border-radius:4px; }
+
 /* Utility classes */
 .delete-link { color:#ff3333 }
 a.delete-link:hover { color:#ff3333; text-decoration:underline }
@@ -34,3 +37,6 @@ a.delete-link:hover { color:#ff3333; text-decoration:underline }
   .big-form input[type=text] { font-size:20px; width:600px }
   .big-form .console { color:#ffffff; background-color:#000000;  }
   .big-form input[type=submit] { font-size:18px }
+
+.breadcrumb { color:#999999; background-color:#eeeeee; border:solid 1px #dddddd; font-size:14px; padding:10px }
+  .breadcrumb .last { color:#000000; font-weight:bold }

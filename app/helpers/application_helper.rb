@@ -6,9 +6,10 @@ module ApplicationHelper
       :current_panel => lambda { link_to @panel.name, panel_path(@panel) }
     }
     links = args[0..-2].map { |place| navigation[place].call }
-    line = (links << args.last).join " | "
+    last = "<span class='last'>#{args.last}</span>"
+    line = (links << last).join " > "
     %{
-      <div class="breadcrumb">
+      <div class="breadcrumb rounded_4">
         #{line}
       </div>
     }.html_safe
