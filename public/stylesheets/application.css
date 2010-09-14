@@ -14,6 +14,8 @@ body { color:#333333; font-family: Helvetica, arial, sans-serif; font-size:12px 
 .small-button:hover, .big-button:hover { background-color:#555555; color:#ffffff }
 .big-button { font-size:14px; padding:4px 12px }
 
+.hint { color:#777777; font-style:italic; font-size:13px; font-family:Cambria, Georgia, Times, 'Times New Roman', serif; }
+
 /* Utility classes */
 .delete-link { color:#ff3333 }
 a.delete-link:hover { color:#ff3333; text-decoration:underline }

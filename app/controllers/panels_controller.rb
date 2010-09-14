@@ -1,4 +1,9 @@
 class PanelsController < ApplicationController
+  
+  def new
+    @panel = Panel.new
+    @services = Service.all
+  end
 
   def index
     @panels = Panel.all

@@ -1,0 +1,24 @@
+<h2>New panel</h2>
+
+<table>
+  <tr>
+    <td style="width:300px">
+      <%= form_for @panel do |f| %>
+        <%= f.text_field :name %>
+      <% end %>
+
+      <h3>Services</h3>
+
+      <p class="hint">Drag services here</p>
+    </td>
+    <td>
+      <h3>Available services</h3>
+      <% if @services.empty? %>
+        <p class="hint">No services available</p>
+      <% end %>
+      <% for service in @services %>
+        <%= service.name %>
+      <% end %>
+    </td>
+  </tr>
+</table>
