@@ -7,14 +7,13 @@ a { color:#3a63C0; text-decoration:none }
 h2 { font-size:18px; color:#555555; }
 a:hover { color:#102390 }
 body { color:#333333; font-family: Helvetica, arial, sans-serif; font-size:12px }
+.hint { color:#777777; font-style:italic; font-size:13px; font-family:Cambria, Georgia, Times, 'Times New Roman', serif; }
 
 /* Buttons */
 .small-button, .big-button { background-color:#777777; color:#ffffff; padding:4px 8px; cursor:pointer;
    -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
 .small-button:hover, .big-button:hover { background-color:#555555; color:#ffffff }
 .big-button { font-size:14px; padding:4px 12px }
-
-.hint { color:#777777; font-style:italic; font-size:13px; font-family:Cambria, Georgia, Times, 'Times New Roman', serif; }
 
 /* Utility classes */
 .delete-link { color:#ff3333 }
