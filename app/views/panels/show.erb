@@ -26,5 +26,16 @@
 //      alert(data);
     })
   });
+  
+  $(function() {
+    updateExecutions();
+  });
+
+  function updateExecutions() {  
+    $.getJSON("/panels/<%= @panel.id %>", function(data) {
+      // alert(data);
+    });    
+    setTimeout(updateExecutions, 3000);  
+  }
 
 </script>

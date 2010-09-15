@@ -4,6 +4,11 @@ class ServicesController < ApplicationController
     @panel = Panel.find(params[:panel_id])
     @services = @panel.services
   end
+  
+  def show
+    @panel = Panel.find(params[:panel_id])
+    @service = @panel.services.find(params[:id])
+  end
 
   def new
     @panel = Panel.find(params[:panel_id])
