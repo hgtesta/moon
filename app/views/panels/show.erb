@@ -10,7 +10,7 @@
       <td><%= service.name %></td>
       <td>
         <% for execution in service.executions%>
-          <%= execution.return_code %>
+          <%= execution.result %>
         <% end %>
       </td>
       <td><input type="button" class="execute-button" value="Execute"/></td>

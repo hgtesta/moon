@@ -15,18 +15,17 @@ class PanelsController < ApplicationController
     respond_to do |format|
       format.html
       format.js { 
-        @panel.dump_executions
-        
+        result = []        
+
+        # Return to browser should be something like this:
         # [
         #   1 => [[1,:ok], [4, :timeout], [20, :ok], [23, :ok], [44, :ok], [56, :error]]
-        #   2 => [[1,:ok], [4, :timeout], [20, :ok], [23, :ok], [44, :ok], [56, :error]]
-        #   3 => [[1,:ok], [4, :timeout], [20, :ok], [23, :ok], [44, :ok], [56, :error]]
+        #   2 => [[3,:ok], [7, :timeout], [13, :ok], [24, :ok], [31, :ok], [48, :error]]
         # ]
-        render :text => '{
-          "foo": "The quick brown fox jumps over the lazy dog.",
-          "bar": "ABCDEFG",
-          "baz": [52, 97]
-        }' 
+        for service in @panel.services
+          result << service.executions.map { |execution| [execution.id, execution.result] }  
+        end
+        render :text => result.to_json
       }
     end
   end

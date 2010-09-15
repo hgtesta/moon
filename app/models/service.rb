@@ -11,7 +11,7 @@ class Service < ActiveRecord::Base
     begin
       Timeout::timeout(self.timeout) do
         benchmark = Benchmark.measure do
-          @execution = Execution.create :command => self.command
+          @execution = self.executions.create :command => self.command
           @execution.output = `#{@execution.command}`
           @execution.return_code = $?
         end
@@ -23,5 +23,5 @@ class Service < ActiveRecord::Base
     end
     @execution
   end
- 
+  
 end
