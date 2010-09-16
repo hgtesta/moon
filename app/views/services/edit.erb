@@ -6,4 +6,8 @@
   <%= render "form", :f => f %>
   <%= f.submit "Save changes" %>
 <% end %>
+<br/>
 
+<p><%= link_to "Delete service", service_path(@service), :method => :delete, 
+                                                        :confirm => "Are you sure?", 
+                                                        :class => "delete-link" %></p>

@@ -20,6 +20,8 @@
 
 <script language="javascript">
 
+  var REFRESH_TIME = 3000;
+
   $(".execute-button").click(function(){
     var id = $(this).closest("tr").attr("data-id");
     $.post("/services/" + id + "/executions", function(data){
@@ -28,7 +30,7 @@
   });
 
   $(function() {
-    setTimeout(updateExecutions, 3000);
+    setTimeout(updateExecutions, REFRESH_TIME);
   });
 
   function updateExecutions() {  
@@ -43,7 +45,7 @@
         });
       })
     });    
-    setTimeout(updateExecutions, 3000);
+    setTimeout(updateExecutions, REFRESH_TIME);
   }
 
 </script>
