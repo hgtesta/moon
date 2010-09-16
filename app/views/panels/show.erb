@@ -4,13 +4,13 @@
 
 <%= link_to "Edit services", panel_services_path(@panel) %>
 
-<table>
+<table class="services">
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
       <td><%= service.name %></td>
       <td class="service-<%= service.id %>-executions">
         <% for execution in service.executions%>
-          <%= link_to execution.result, execution_path(execution) %>
+          <%= link_to execution.result, execution_path(execution), :class => execution.result %>
         <% end %>
       </td>
       <td><input type="button" class="execute-button" value="Execute"/></td>
@@ -23,12 +23,12 @@
   $(".execute-button").click(function(){
     var id = $(this).closest("tr").attr("data-id");
     $.post("/services/" + id + "/executions", function(data){
-//      alert(data);
+     // alert(data);
     })
   });
-  
+
   $(function() {
-    updateExecutions();
+    setTimeout(updateExecutions, 3000);
   });
 
   function updateExecutions() {  
@@ -38,12 +38,12 @@
         $(service).empty();
         $.each(service_array, function(index, pair) {
           var id = pair[0];
-          var status = pair[1];
-          $(service).append("<a href='/services/" + id + "'>" + status + " </a>");
+          var result = pair[1];
+          $(service).append("<a href='/services/" + id + "' class='" + result + "'>" + result + "</a> ");
         });
       })
     });    
     setTimeout(updateExecutions, 3000);
   }
-  
+
 </script>

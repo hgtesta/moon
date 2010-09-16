@@ -6,4 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-  Panel.create! :name => "Main"
+@panel = Panel.create! :name => "Main"
+@panel.services << Service.new({ :name => "List directory",
+                                 :command => "ls -l",
+                                 :timeout => 10 })
