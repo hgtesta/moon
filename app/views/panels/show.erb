@@ -8,9 +8,9 @@
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
       <td><%= service.name %></td>
-      <td>
+      <td class="service-<%= service.id %>-executions">
         <% for execution in service.executions%>
-          <%= execution.result %>
+          <%= link_to execution.result, execution_path(execution) %>
         <% end %>
       </td>
       <td><input type="button" class="execute-button" value="Execute"/></td>
@@ -33,9 +33,17 @@
 
   function updateExecutions() {  
     $.getJSON("/panels/<%= @panel.id %>", function(data) {
-      // alert(data);
+      $.each(data, function(serviceId, service_array) {
+        var service = $(".service-" + serviceId + "-executions");
+        $(service).empty();
+        $.each(service_array, function(index, pair) {
+          var id = pair[0];
+          var status = pair[1];
+          $(service).append("<a href='/services/" + id + "'>" + status + " </a>");
+        });
+      })
     });    
-    setTimeout(updateExecutions, 3000);  
+    setTimeout(updateExecutions, 3000);
   }
-
+  
 </script>

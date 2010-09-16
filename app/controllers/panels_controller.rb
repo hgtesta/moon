@@ -15,15 +15,15 @@ class PanelsController < ApplicationController
     respond_to do |format|
       format.html
       format.js { 
-        result = []        
+        result = {}
 
         # Return to browser should be something like this:
-        # [
+        # {
         #   1 => [[1,:ok], [4, :timeout], [20, :ok], [23, :ok], [44, :ok], [56, :error]]
         #   2 => [[3,:ok], [7, :timeout], [13, :ok], [24, :ok], [31, :ok], [48, :error]]
-        # ]
+        # }
         for service in @panel.services
-          result << service.executions.map { |execution| [execution.id, execution.result] }  
+          result[service.id] = service.executions.map { |execution| [execution.id, execution.result] }  
         end
         render :text => result.to_json
       }
