@@ -59,7 +59,7 @@ a.delete-link:hover { color:#ff3333; text-decoration:underline }
 /* =         Executions         = */
 /* ============================== */
 .services a { background-color:#eeeeee; padding:4px; -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
-.services a:hover { background-color:#ddddff }
+.services a:hover { background-color:#777777 }
 .services .name { font-size:14px; padding-right:4px; color:#555555 }
 .services .ok { color:#33aa33 }
 .services .timeout { color:#eea555 }

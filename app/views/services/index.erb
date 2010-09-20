@@ -1,7 +1,8 @@
 <%= breadcrumb :panels, :current_panel, "Services", 
                :button => link_to("New service", new_panel_service_path(@panel)) %>
 
-<h2>Services for <%= @panel.name %></h2>
+<br/>
+<br/>
 
 <% if @services.empty? %>
   <p class="hint">No services</p>

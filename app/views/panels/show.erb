@@ -1,4 +1,4 @@
-<%= breadcrumb :panels, @panel.name %>
+<%= breadcrumb :panels, @panel.name, :button => link_to("Edit services", panel_services_path(@panel)) %>
 <br/>
 
 <table class="services">
@@ -14,8 +14,6 @@
     </tr>
   <% end %>
 </table>
-
-<p><%= link_to "Edit services", panel_services_path(@panel) %></p>
 
 <script language="javascript">
 
