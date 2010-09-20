@@ -1,9 +1,12 @@
-<%= breadcrumb "Panels" %>
+<%= breadcrumb "Panels", :button => link_to("Add panel", new_panel_path) %>
+<br/>
 
-<h2>Panels</h2>
+<%# link_to "Add panel", new_panel_path, :class => "big-button" %>
 
-<%= link_to "Add panel", new_panel_path, :class => "big-button" %>
-
-<% for panel in @panels %>
-  <p><%= link_to panel.name, panel_path(panel) %></p>
-<% end %>
+<table class="index-panels">
+  <% for panel in @panels %>
+    <tr>
+      <td><%= link_to panel.name, panel_path(panel) %></td>
+    </tr>
+  <% end %>
+</ul>

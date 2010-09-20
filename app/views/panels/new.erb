@@ -1,8 +1,11 @@
 <%= breadcrumb :panels, "New" %>
 
-<h2>New panel</h2>
-
 <%= form_for @panel do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+  <div class="big-form">
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <%= f.submit %>
+  </div>
 <% end %>

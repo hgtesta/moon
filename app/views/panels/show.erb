@@ -1,13 +1,10 @@
 <%= breadcrumb :panels, @panel.name %>
-
-<h2><%= @panel.name %></h2>
-
-<%= link_to "Edit services", panel_services_path(@panel) %>
+<br/>
 
 <table class="services">
   <% for service in @services %>
     <tr data-id="<%= service.id %>">
-      <td><%= service.name %></td>
+      <td class="name"><%= service.name %></td>
       <td class="service-<%= service.id %>-executions">
         <% for execution in service.executions%>
           <%= link_to execution.result, execution_path(execution), :class => execution.result %>
@@ -17,6 +14,8 @@
     </tr>
   <% end %>
 </table>
+
+<p><%= link_to "Edit services", panel_services_path(@panel) %></p>
 
 <script language="javascript">
 
@@ -41,7 +40,7 @@
         $.each(service_array, function(index, pair) {
           var id = pair[0];
           var result = pair[1];
-          $(service).append("<a href='/services/" + id + "' class='" + result + "'>" + result + "</a> ");
+          $(service).append("<a href='/panels/<%= @panel.id %>/services/" + serviceId + "/executions/" + id + "' class='" + result + "'>" + result + "</a> ");
         });
       })
     });    

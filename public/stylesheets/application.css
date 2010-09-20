@@ -40,12 +40,27 @@ a.delete-link:hover { color:#ff3333; text-decoration:underline }
   
 .console { background-color:#000000; color:#ffffff }
 
-.breadcrumb { color:#999999; background-color:#eeeeee; border:solid 1px #dddddd; font-size:14px; padding:10px }
+.breadcrumb { color:#999999; background-color:#eeeeee; border:solid 1px #dddddd; font-size:14px; padding:10px; }
   .breadcrumb .last { color:#000000; font-weight:bold }
+  .breadcrumb .button { float:right }
+  .breadcrumb .button a { font-size:12px; color:#ffffff; background-color:#aaaaaa; padding:4px 8px; 
+                          -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px;  }
+  .breadcrumb .button a:hover { background-color:#777777 }
+
   
-/* Executions */
+/* ============================== */
+/* =           Panels           = */
+/* ============================== */
+.index-panels td { }
+.index-panels a { font-size:18px; padding:4px 0 }
+
+
+/* ============================== */
+/* =         Executions         = */
+/* ============================== */
 .services a { background-color:#eeeeee; padding:4px; -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; border-radius:2px; }
 .services a:hover { background-color:#ddddff }
+.services .name { font-size:14px; padding-right:4px; color:#555555 }
 .services .ok { color:#33aa33 }
 .services .timeout { color:#eea555 }
 .services .error { color:#aa3333 }

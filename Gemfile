@@ -7,7 +7,7 @@ gem 'rails', '3.0.0'
 
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
-gem 'whenever'
+# gem 'whenever'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -24,7 +24,7 @@ gem 'whenever'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
-# Bundle gems for the local environment. Make sure to
+# Bundle gems for the local environment. Make sure tof
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 # group :development, :test do

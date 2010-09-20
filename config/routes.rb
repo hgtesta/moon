@@ -7,10 +7,12 @@ Moon::Application.routes.draw do
   end
   resources :executions
   resources :panels do
-    resources :services
+    resources :services do
+      resources :executions
+    end
   end
 
-  # The priority is based upon order of creation:
+  # The priority is based upon order of creation: 
   # first created -> highest priority.
 
   # Sample of regular route:
