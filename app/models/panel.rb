@@ -1,5 +1,7 @@
 class Panel < ActiveRecord::Base
   has_and_belongs_to_many :services
+
+  validate :name, :presence => true, :uniqueness => true
   
   def dump_executions
     for service in services

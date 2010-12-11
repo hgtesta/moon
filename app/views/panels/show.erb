@@ -7,7 +7,7 @@
       <td class="name"><%= service.name %></td>
       <td class="service-<%= service.id %>-executions">
         <% for execution in service.executions%>
-          <%= link_to execution.result, execution_path(execution), :class => execution.result %>
+          <%= link_to execution.result, panel_service_execution_path(@panel, service, execution), :class => execution.result %>
         <% end %>
       </td>
       <td><input type="button" class="execute-button" value="Execute"/></td>

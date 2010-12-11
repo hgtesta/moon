@@ -3,6 +3,15 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
+# set :output, ""
+
+app_path = Dir.pwd
+set :output, "#{app_path}/log/whenever.log"
+
+every 1.minute do
+  command "ls -l"
+end
+
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"

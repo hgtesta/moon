@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   :expected_result
     t.string   :when
     t.integer  :timeout
+    t.boolean  :active
     t.datetime :created_at
     t.datetime :updated_at
   end

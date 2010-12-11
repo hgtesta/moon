@@ -8,6 +8,7 @@ gem 'rails', '3.0.0'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql', '2.8.1'
 gem 'whenever', '0.5.2'
+gem "rufus-scheduler"
 
 # Use unicorn as the web server
 # gem 'unicorn'
